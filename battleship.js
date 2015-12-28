@@ -26,19 +26,19 @@ while (isSunk == false) {
     var isGuessed = alreadyGuessed();
     guesses = guesses + 1;
     guessed.push(guess); // add guess to array
-    if (guess == location1 || guess == location2 || guess == location3) {
-      if (isGuessed) {
-        alert("You've already guessed " + guess);
-      } else {
+    if (isGuessed) {
+      alert("You've already guessed " + guess);
+    } else {
+      if (guess == location1 || guess == location2 || guess == location3) {
         hits = hits + 1;
         alert("HIT!");
-        if (hits == 3) {
-          isSunk = true;
-          alert("You sunk my battleship!");
-        }
+          if (hits == 3) {
+            isSunk = true;
+            alert("You sunk my battleship!");
+          }
+      } else {
+        alert("MISS!");
       }
-    } else {
-      alert("MISS!");
     }
   }
 }
